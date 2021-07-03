@@ -13,7 +13,7 @@ const Landing = () => {
     <div className='landingPage'>
       <Container>
         <Row className='justify-content-center align-items-center text-center maxHeight'>
-          <Col md={8} className='justify-content -center text-center'>
+          <Col md={8} className='justify-content-center text-center'>
             <h1>Dev Committee</h1>
             <p className='lead'>
               A perfect site for a developer to create a profile/portfolio,
