@@ -7,6 +7,29 @@ a {
   text-decoration: none;
 }
 
+.helper-text {
+  font-size: 0.8rem;
+}
+
+/* Navigation Bar */
+.navbar {
+  min-height: 60px;
+}
+
+/* Landing Page */
+.landingPage {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url('./assests/images/landing.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f3f3f3;
+}
+
+.full-height {
+  height: calc(100vh - 60px);
+}
+
 .password-field {
   width: calc(100% - 59.6px);
 }

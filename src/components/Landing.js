@@ -6,13 +6,11 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import './Landing.css';
-
 const Landing = () => {
   return (
     <div className='landingPage'>
       <Container>
-        <Row className='justify-content-center align-items-center text-center maxHeight'>
+        <Row className='justify-content-center align-items-center text-center full-height'>
           <Col md={8} className='justify-content-center text-center'>
             <h1>Dev Committee</h1>
             <p className='lead'>

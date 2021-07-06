@@ -10,7 +10,7 @@ import logo from '../assests/images/logo1.png';
 
 const Navigationbar = () => {
   return (
-    <Navbar bg='primary' variant='dark'>
+    <Navbar bg='primary' variant='dark' className='navbar'>
       <Container>
         <Navbar.Brand href='#home'>
           <img

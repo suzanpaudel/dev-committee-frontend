@@ -10,8 +10,6 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-import './LoginPage.css';
-
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +26,7 @@ const LoginPage = () => {
 
   return (
     <Container>
-      <Row className='justify-content-center align-items-center maxHeight'>
+      <Row className='justify-content-center align-items-center full-height'>
         <Col sm={10} md={8} lg={5} className='justify-content-center'>
           <h2 className='text-center fs-1'>Sign In</h2>
 
