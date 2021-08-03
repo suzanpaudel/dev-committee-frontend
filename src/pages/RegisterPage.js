@@ -196,7 +196,7 @@ const RegisterPage = ({
 };
 
 const mapStateToProps = (state) => ({
-  registerData: state.authReducer,
+  registerData: state.registerReducer,
 });
 
 const mapDispatchToProps = (dispatch) => {

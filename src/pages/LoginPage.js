@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 
 import Button from 'react-bootstrap/Button';
 import FloatingLabel from 'react-bootstrap-floating-label';
@@ -10,7 +12,11 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
-const LoginPage = () => {
+import { clearLoginMsg, login } from '../reducers/user/actions';
+
+const LoginPage = ({ onLogin, onClearMsg, userData }) => {
+  const { loginLoading, loginSuccess, loginError } = userData;
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +27,7 @@ const LoginPage = () => {
 
   const loginHandler = (e) => {
     e.preventDefault();
-    console.log('Login Working');
+    onLogin({ email, password });
   };
 
   return (
@@ -40,7 +46,7 @@ const LoginPage = () => {
                   label='Email Address*'
                   value={email}
                   onChange={(e) => {
-                    setEmail(e);
+                    setEmail(e.target.value);
                   }}
                 />
 
@@ -52,7 +58,7 @@ const LoginPage = () => {
                     label='Password*'
                     value={password}
                     onChange={(e) => {
-                      setPassword(e);
+                      setPassword(e.target.value);
                     }}
                   />
                   <InputGroup.Text
@@ -97,4 +103,17 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+const mapStateToProps = (state) => ({
+  userData: state.userReducer,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogin: (data) => dispatch(login(data)),
+    onClearMsg: () => dispatch(clearLoginMsg()),
+  };
+};
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(withRouter, withConnect)(LoginPage);
